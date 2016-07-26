@@ -246,6 +246,7 @@ function initMap() {
         changeSearchLocation(newLocation.lat(), newLocation.lng())
             .done(function() {
                 oldLocation = null;
+                marker.setPosition(newLocation);
             })
             .fail(function() {
                 if (oldLocation) {
