@@ -244,6 +244,20 @@ function initMap() {
     google.maps.event.addListener(map, 'idle', updateMap);
 
     marker = createSearchMarker();
+    
+    google.maps.event.addListener(map, 'click', function(event) {
+    	console.log(event);
+        var newLocation = event.latLng;
+        changeSearchLocation(newLocation.lat(), newLocation.lng())
+            .done(function() {
+                oldLocation = null;
+            })
+            .fail(function() {
+                if (oldLocation) {
+                    marker.setPosition(oldLocation);
+                }
+            });
+    });
 
     addMyLocationButton();
     initSidebar();
@@ -275,19 +289,6 @@ function createSearchMarker() {
 
     google.maps.event.addListener(marker, 'dragend', function() {
         var newLocation = marker.getPosition();
-        changeSearchLocation(newLocation.lat(), newLocation.lng())
-            .done(function() {
-                oldLocation = null;
-            })
-            .fail(function() {
-                if (oldLocation) {
-                    marker.setPosition(oldLocation);
-                }
-            });
-    });
-    
-    google.maps.event.addListener(map, 'click', function(event) {
-        var newLocation = event.latLng;
         changeSearchLocation(newLocation.lat(), newLocation.lng())
             .done(function() {
                 oldLocation = null;
