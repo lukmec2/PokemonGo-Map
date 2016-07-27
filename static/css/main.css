@@ -1950,11 +1950,6 @@ html, body {
   top: 3.5em;
   bottom: 0px;
   width: 100%; }
-  
-span.select2-selection.select2-selection--multiple {
-    max-height: 100px !important;
-    overflow: auto !important;
-}
 
 /* Footer */
 #footer {
