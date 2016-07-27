@@ -420,6 +420,12 @@ function initSidebar() {
     $('#notify-all-pokemon').click(function() {
     	loadNotifications();
     });
+    
+    $('#un-notify-all-pokemon').click(function() {
+    	for(var i = 0; i<$('#notify-pokemon')[0].length; i++){
+    	   $('#notify-pokemon')[0][i].selected=false;
+    	}
+    });
 }
 
 function pad(number) { return number <= 99 ? ("0" + number).slice(-2) : number; }
