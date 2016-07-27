@@ -266,7 +266,15 @@ function initMap() {
         redrawPokemon(map_data.pokemons);
         redrawPokemon(map_data.lure_pokemons);
     });
+    
+    loadNotifications();
 };
+
+function loadNotifications(){
+	console.log("test");
+     notifyAboutPokemon(3);
+     notifyAboutPokemon('6');
+}
 
 function createSearchMarker() {
     marker = new google.maps.Marker({ //need to keep reference.
