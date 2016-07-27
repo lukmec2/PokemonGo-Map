@@ -749,7 +749,19 @@ function polyShape(point, r1, r2, r3, r4, rotation, vertexCount, strokeColour, s
 
     points.push(new google.maps.LatLng(point.lat() + lat, point.lng() + lng));
   }
+  
+  /*
+    var marker = new google.maps.Circle({
+        map: map,
+        center: circleCenter,
+        radius: 100,    // 10 miles in metres
+        fillColor: getColorByDate(item.last_modified),
+        strokeWeight: 1
+    });
+*/  
   return (new google.maps.Polygon({
+    map: map,
+    center: center,
     paths: points,
     strokeColor: strokeColour,
     strokeWeight: strokeWeight,
