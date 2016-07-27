@@ -713,7 +713,7 @@ function setupScannedMarker(item) {
         strokeWeight: 1
     });
 */    
-    var marker = google.maps.Polygon.RegularPoly(circleCenter, 100, 6, 90, "#ffffff", 1, 1, getColorByDate(item.last_modified), 0.3);
+    var marker = regularPoly(circleCenter, 100, 6, 90, "#ffffff", 1, 1, getColorByDate(item.last_modified), 0.3);
 
     // marker.infoWindow = new google.maps.InfoWindow({
     //     content: scannedLabel(item.last_modified),
