@@ -704,7 +704,7 @@ function getColorByDate(value){
 function setupScannedMarker(item) {
     var circleCenter = new google.maps.LatLng(item.latitude, item.longitude);
 
-/*
+
     var marker = new google.maps.Circle({
         map: map,
         center: circleCenter,
@@ -712,9 +712,8 @@ function setupScannedMarker(item) {
         fillColor: getColorByDate(item.last_modified),
         strokeWeight: 1
     });
-*/    
-    var marker = regularPoly(circleCenter, 100, 6, 90, "#ffffff", 1, 1, "#333333", 0.3);
-    
+   
+ 
     // marker.infoWindow = new google.maps.InfoWindow({
     //     content: scannedLabel(item.last_modified),
     //     position: circleCenter
@@ -724,57 +723,6 @@ function setupScannedMarker(item) {
     return marker;
 };
 
-function polyShape(point, r1, r2, r3, r4, rotation, vertexCount, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts, tilt) {
-  var rot = -rotation * Math.PI / 180;
-  var points = [];
-  var latConv = google.maps.geometry.spherical.computeDistanceBetween(point, new google.maps.LatLng(point.lat() + 0.1, point.lng())) * 10;
-  var lngConv = google.maps.geometry.spherical.computeDistanceBetween(point, new google.maps.LatLng(point.lat(), point.lng() + 0.1)) * 10;
-  var step = (360 / vertexCount) || 10;
-
-  var flop = -1;
-  if (tilt) {
-    var I1 = 180 / vertexCount;
-  } else {
-    var I1 = 0;
-  }
-  for (var i = I1; i <= 360.001 + I1; i += step) {
-    var r1a = flop ? r1 : r3;
-    var r2a = flop ? r2 : r4;
-    flop = -1 - flop;
-    var y = r1a * Math.cos(i * Math.PI / 180);
-    var x = r2a * Math.sin(i * Math.PI / 180);
-    var lng = (x * Math.cos(rot) - y * Math.sin(rot)) / lngConv;
-    var lat = (y * Math.cos(rot) + x * Math.sin(rot)) / latConv;
-
-    points.push(new google.maps.LatLng(point.lat() + lat, point.lng() + lng));
-  }
-  
-  /*
-    var marker = new google.maps.Circle({
-        map: map,
-        center: circleCenter,
-        radius: 100,    // 10 miles in metres
-        fillColor: getColorByDate(item.last_modified),
-        strokeWeight: 1
-    });
-*/  
-  return (new google.maps.Polygon({
-    map: map,
-    center: center,
-    paths: points,
-    strokeColor: strokeColour,
-    strokeWeight: strokeWeight,
-    strokeOpacity: Strokepacity,
-    fillColor: fillColour,
-    fillOpacity: fillOpacity
-  }))
-}
-
-function regularPoly(point, radius, vertexCount, rotation, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts) {
-  rotation = rotation || 0;
-  var tilt = !(vertexCount & 1);
-  return polyShape(point, radius, radius, radius, radius, rotation, vertexCount, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts, tilt)
-}
 
 
 function clearSelection() {
