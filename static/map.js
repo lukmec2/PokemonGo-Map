@@ -706,12 +706,12 @@ function setupScannedMarker(item) {
 
 
     var flightPlanCoordinates = [
-    {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.long()},
-    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.long() -0.00105},
-    {lat: circleCenter.lat() + 0.99955, lng: circleCenter.long() -0.00105},
-    {lat: circleCenter.lat() + 0.9991, lng: circleCenter.long()},
-    {lat: circleCenter.lat() + 0.99955, lng: circleCenter.long() -0.09895},
-    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.long() -0.09895}
+    {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.lng()},
+    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() -0.00105},
+    {lat: circleCenter.lat() + 0.99955, lng: circleCenter.lng() -0.00105},
+    {lat: circleCenter.lat() + 0.9991, lng: circleCenter.lng()},
+    {lat: circleCenter.lat() + 0.99955, lng: circleCenter.lng() -0.09895},
+    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() -0.09895}
   ];
   var marker = new google.maps.Polygon({
     map: map,
