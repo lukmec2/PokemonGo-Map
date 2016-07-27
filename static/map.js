@@ -206,6 +206,20 @@ function loadNotifications(){
      notifyAboutPokemon(6);
      notifyAboutPokemon(6);
      notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
 }
 
 function removePokemonMarker(encounter_id) {
