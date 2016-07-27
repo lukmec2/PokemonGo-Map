@@ -255,7 +255,6 @@ function initMap() {
             });
     });
 
-    console.log("map Created");
     addMyLocationButton();
     initSidebar();
     google.maps.event.addListenerOnce(map, 'idle', function(){
@@ -271,8 +270,7 @@ function initMap() {
 };
 
 function loadNotifications(){
-	console.log("test");
-     notifyAboutPokemon(3);
+     console.log("testi");
      notifyAboutPokemon('6');
 }
 
