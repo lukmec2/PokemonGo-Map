@@ -258,7 +258,6 @@ function initMap() {
     console.log("map Created");
     addMyLocationButton();
     initSidebar();
-    selectPomos();
     google.maps.event.addListenerOnce(map, 'idle', function(){
         updateMap();
     });
@@ -268,18 +267,6 @@ function initMap() {
         redrawPokemon(map_data.lure_pokemons);
     });
 };
-
-function selectPomos(){
-    $selectNotify.val(
-        $selectNotify.val().concat(3)
-    ).trigger('change')
-    $selectNotify.val(
-        $selectNotify.val().concat(6)
-    ).trigger('change')
-    $selectNotify.val(
-        $selectNotify.val().concat(9)
-    ).trigger('change')
-}
 
 function createSearchMarker() {
     marker = new google.maps.Marker({ //need to keep reference.
