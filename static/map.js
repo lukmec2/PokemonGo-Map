@@ -266,12 +266,11 @@ function initMap() {
         redrawPokemon(map_data.pokemons);
         redrawPokemon(map_data.lure_pokemons);
     });
-    
-    loadNotifications();
 };
 
 function loadNotifications(){
      console.log("testo2");
+     notifyAboutPokemon(6);
 }
 
 function createSearchMarker() {
