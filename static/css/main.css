@@ -1950,6 +1950,11 @@ html, body {
   top: 3.5em;
   bottom: 0px;
   width: 100%; }
+  
+span.select2-selection{
+  max-height: 100px;
+  overflow: auto;
+}
 
 /* Footer */
 #footer {
