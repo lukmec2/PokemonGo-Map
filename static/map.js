@@ -724,7 +724,7 @@ function setupScannedMarker(item) {
     return marker;
 };
 
-google.maps.Polygon.Shape = function(point, r1, r2, r3, r4, rotation, vertexCount, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts, tilt) {
+function polyShape(point, r1, r2, r3, r4, rotation, vertexCount, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts, tilt) {
   var rot = -rotation * Math.PI / 180;
   var points = [];
   var latConv = google.maps.geometry.spherical.computeDistanceBetween(point, new google.maps.LatLng(point.lat() + 0.1, point.lng())) * 10;
@@ -758,19 +758,12 @@ google.maps.Polygon.Shape = function(point, r1, r2, r3, r4, rotation, vertexCoun
   }))
 }
 
-google.maps.Polygon.RegularPoly = function(point, radius, vertexCount, rotation, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts) {
+function regularPoly(point, radius, vertexCount, rotation, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts) {
   rotation = rotation || 0;
   var tilt = !(vertexCount & 1);
-  return google.maps.Polygon.Shape(point, radius, radius, radius, radius, rotation, vertexCount, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts, tilt)
+  return polyShape(point, radius, radius, radius, radius, rotation, vertexCount, strokeColour, strokeWeight, Strokepacity, fillColour, fillOpacity, opts, tilt)
 }
 
-function EOffsetBearing(point, dist, bearing) {
-  var latConv = google.maps.geometry.spherical.computeDistanceBetween(point, new google.maps.LatLng(point.lat() + 0.1, point.lng())) * 10;
-  var lngConv = google.maps.geometry.spherical.computeDistanceBetween(point, new google.maps.LatLng(point.lat(), point.lng() + 0.1)) * 10;
-  var lat = dist * Math.cos(bearing * Math.PI / 180) / latConv;
-  var lng = dist * Math.sin(bearing * Math.PI / 180) / lngConv;
-  return new google.maps.LatLng(point.lat() + lat, point.lng() + lng)
-}
 
 function clearSelection() {
     if (document.selection ) {
