@@ -195,6 +195,7 @@ function excludePokemon(id) {
 }
 
 function notifyAboutPokemon(id) {
+	console.log(id);
     $selectNotify.val(
         $selectNotify.val().concat(id)
     ).trigger('change')
@@ -270,8 +271,7 @@ function initMap() {
 };
 
 function loadNotifications(){
-     console.log("testo");
-     notifyAboutPokemon(6);
+     console.log("testo2");
 }
 
 function createSearchMarker() {
