@@ -1951,9 +1951,9 @@ html, body {
   bottom: 0px;
   width: 100%; }
   
-span.select2-selection{
-  max-height: 100px;
-  overflow: auto;
+span.select2-selection.select2-selection--multiple {
+    max-height: 100px !important;
+    overflow: auto !important;
 }
 
 /* Footer */
