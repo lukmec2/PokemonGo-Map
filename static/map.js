@@ -270,8 +270,8 @@ function initMap() {
 };
 
 function loadNotifications(){
-     console.log("testi");
-     notifyAboutPokemon('6');
+     console.log("testo");
+     notifyAboutPokemon(6);
 }
 
 function createSearchMarker() {
