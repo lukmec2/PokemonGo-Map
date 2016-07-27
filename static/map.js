@@ -202,7 +202,9 @@ function notifyAboutPokemon(id) {
 }
 
 function loadNotifications(){
-     console.log("testo3");
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
+     notifyAboutPokemon(6);
      notifyAboutPokemon(6);
 }
 
