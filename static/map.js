@@ -714,7 +714,6 @@ function setupScannedMarker(item) {
     });
 */    
     var marker = regularPoly(circleCenter, 100, 6, 90, "#ffffff", 1, 1, "#333333", 0.3);
-    console.log(marker);
     
     // marker.infoWindow = new google.maps.InfoWindow({
     //     content: scannedLabel(item.last_modified),
