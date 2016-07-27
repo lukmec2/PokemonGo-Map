@@ -698,12 +698,12 @@ function getColorByDate(value){
 
     //value from 0 to 1 - Green to Red
     var hue=((1-diff)*120).toString(10);
-    return ["hsl(",hue,",100%,50%)"].join("");
+    return ["hsl(",hue,",100%,30%)"].join("");
 }
 
 function setupScannedMarker(item) {
     var circleCenter = new google.maps.LatLng(item.latitude, item.longitude);
-
+/*
  var flightPlanCoordinates = [
     {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.lng()},
     {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() -0.00105},
@@ -723,15 +723,17 @@ function setupScannedMarker(item) {
     center: point,
     radius: 100
   });
-/*
+ */
+
     var marker = new google.maps.Circle({
         map: map,
         center: circleCenter,
         radius: 100,    // 10 miles in metres
         fillColor: getColorByDate(item.last_modified),
-        strokeWeight: 1
+        strokeWeight: 1,
+        strokeOpacity: 0.5
     });
-  */
+  
  
     // marker.infoWindow = new google.maps.InfoWindow({
     //     content: scannedLabel(item.last_modified),
