@@ -114,7 +114,7 @@ var StoreOptions = {
         type: StoreTypes.JSON
     },
     showGyms: {
-        default: false,
+        default: true,
         type: StoreTypes.Boolean
     },
     showPokemon: {
@@ -126,7 +126,7 @@ var StoreOptions = {
         type: StoreTypes.Boolean
     },
     showPokestops: {
-        default: true,
+        default: false,
         type: StoreTypes.Boolean
     },
     showScanned: {
@@ -234,7 +234,7 @@ function initMap() {
     map.addListener('maptypeid_changed', function(s) {
         Store.set('map_style', this.mapTypeId);
     });
-
+    Store.set('map_style','style_pgo');
     map.setMapTypeId(Store.get('map_style'));
     google.maps.event.addListener(map, 'idle', updateMap);
 
@@ -258,6 +258,7 @@ function initMap() {
     console.log("map Created");
     addMyLocationButton();
     initSidebar();
+    selectPomos();
     google.maps.event.addListenerOnce(map, 'idle', function(){
         updateMap();
     });
@@ -267,6 +268,18 @@ function initMap() {
         redrawPokemon(map_data.lure_pokemons);
     });
 };
+
+function selectPomos(){
+    $selectNotify.val(
+        $selectNotify.val().concat(3)
+    ).trigger('change')
+    $selectNotify.val(
+        $selectNotify.val().concat(6)
+    ).trigger('change')
+    $selectNotify.val(
+        $selectNotify.val().concat(9)
+    ).trigger('change')
+}
 
 function createSearchMarker() {
     marker = new google.maps.Marker({ //need to keep reference.
