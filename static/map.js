@@ -705,6 +705,22 @@ function setupScannedMarker(item) {
     var circleCenter = new google.maps.LatLng(item.latitude, item.longitude);
 
 
+    var flightPlanCoordinates = [
+    {lat: item.latitude + 0.0009, lng: item.longitude},
+    {lat: item.latitude + 0.00045, lng: item.longitude -0.00105},
+    {lat: item.latitude + 0.99955, lng: item.longitude -0.00105},
+    {lat: item.latitude + 0.9991, lng: item.longitude},
+    {lat: item.latitude + 0.99955, lng: item.longitude -0.09895},
+    {lat: item.latitude + 0.00045, lng: item.longitude -0.09895}
+  ];
+  var marker = new google.maps.Polygon({
+    paths: flightPlanCoordinates,
+    strokeColor: '#FFFFFF',
+    strokeOpacity: 0.5,
+    strokeWeight: 1,
+    fillColor: getColorByDate(item.last_modified)
+  });
+/*
     var marker = new google.maps.Circle({
         map: map,
         center: circleCenter,
@@ -712,7 +728,7 @@ function setupScannedMarker(item) {
         fillColor: getColorByDate(item.last_modified),
         strokeWeight: 1
     });
-   
+  */ 
  
     // marker.infoWindow = new google.maps.InfoWindow({
     //     content: scannedLabel(item.last_modified),
