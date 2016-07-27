@@ -706,14 +706,15 @@ function setupScannedMarker(item) {
 
 
     var flightPlanCoordinates = [
-    {lat: item.latitude + 0.0009, lng: item.longitude},
-    {lat: item.latitude + 0.00045, lng: item.longitude -0.00105},
-    {lat: item.latitude + 0.99955, lng: item.longitude -0.00105},
-    {lat: item.latitude + 0.9991, lng: item.longitude},
-    {lat: item.latitude + 0.99955, lng: item.longitude -0.09895},
-    {lat: item.latitude + 0.00045, lng: item.longitude -0.09895}
+    {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.long()},
+    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.long() -0.00105},
+    {lat: circleCenter.lat() + 0.99955, lng: circleCenter.long() -0.00105},
+    {lat: circleCenter.lat() + 0.9991, lng: circleCenter.long()},
+    {lat: circleCenter.lat() + 0.99955, lng: circleCenter.long() -0.09895},
+    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.long() -0.09895}
   ];
   var marker = new google.maps.Polygon({
+    map: map,
     paths: flightPlanCoordinates,
     strokeColor: '#FFFFFF',
     strokeOpacity: 0.5,
