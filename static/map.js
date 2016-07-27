@@ -201,6 +201,11 @@ function notifyAboutPokemon(id) {
     ).trigger('change')
 }
 
+function loadNotifications(){
+     console.log("testo3");
+     notifyAboutPokemon(6);
+}
+
 function removePokemonMarker(encounter_id) {
     map_data.pokemons[encounter_id].marker.setMap(null);
 }
@@ -268,11 +273,6 @@ function initMap() {
     });
 };
 
-function loadNotifications(){
-     console.log("testo2");
-     notifyAboutPokemon(6);
-}
-
 function createSearchMarker() {
     marker = new google.maps.Marker({ //need to keep reference.
         position: {
@@ -332,6 +332,10 @@ function initSidebar() {
     });
     icons.val((pokemon_sprites[Store.get('pokemonIcons')]) ? Store.get('pokemonIcons') : 'highres');
     $('#pokemon-icon-size').val(Store.get('iconSizeModifier'));
+    
+    $('#notify-all-pokemon').click(function() {
+    	loadNotifications();
+    });
 }
 
 function pad(number) { return number <= 99 ? ("0" + number).slice(-2) : number; }
