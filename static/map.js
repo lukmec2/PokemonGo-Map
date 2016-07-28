@@ -135,7 +135,7 @@ var StoreOptions = {
         type: StoreTypes.Boolean
     },
     showScanned: {
-        default: false,
+        default: true,
         type: StoreTypes.Boolean
     },
     playSound: {
@@ -705,7 +705,7 @@ function setupScannedMarker(item) {
     var circleCenter = new google.maps.LatLng(item.latitude, item.longitude);
 
  //var offsetlng = 0.0012775;
- var offsetlng = 0.001280908405;
+ var offsetlng = 0.00128090840;
  console.log(circleCenter.lat());
  var flightPlanCoordinates = [
     {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.lng()},
