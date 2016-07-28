@@ -704,7 +704,8 @@ function getColorByDate(value){
 function setupScannedMarker(item) {
     var circleCenter = new google.maps.LatLng(item.latitude, item.longitude);
  //var offsetlng = 0.0012775;
-   var offsetlng = 0.001280908;
+ //var offsetlng = 0.001280908;
+   var offsetlng = 0.0012809;
  console.log(circleCenter.lat());
  var flightPlanCoordinates = [
     {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.lng()},
@@ -721,7 +722,7 @@ function setupScannedMarker(item) {
     strokeColor: '#FFFFFF',
     strokeOpacity: 0.5,
     strokeWeight: 0,
-    fillColor: "00FFFF",
+    fillColor: getColorByDate(item.last_modified),
     center: circleCenter,
     radius: 100
   });
