@@ -730,7 +730,8 @@ function setupScannedMarker(item) {
         center: circleCenter,
         radius: 100,    // 10 miles in metres
         fillColor: getColorByDate(item.last_modified),
-        strokeWeight: 1,
+        fillOpacity: 0.1,
+        strokeWeight: 0,
         strokeOpacity: 0.1
     });
   
