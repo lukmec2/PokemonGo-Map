@@ -698,7 +698,7 @@ function getColorByDate(value){
 
     //value from 0 to 1 - Green to Red
     var hue=((1-diff)*120).toString(10);
-    return ["hsl(",hue,",100%,50%,10%)"].join("");
+    return ["hsl(",hue,",100%,50%)"].join("");
 }
 
 function setupScannedMarker(item) {
@@ -731,7 +731,7 @@ function setupScannedMarker(item) {
         radius: 100,    // 10 miles in metres
         fillColor: getColorByDate(item.last_modified),
         strokeWeight: 1,
-        strokeOpacity: 0.5
+        strokeOpacity: 0.1
     });
   
  
