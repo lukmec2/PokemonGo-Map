@@ -636,6 +636,16 @@ function setupPokemonMarker(item, skipNotification) {
               audio.play();
             }
             sendNotification('A wild ' + item.pokemon_name + ' appeared!', 'Click to load map', 'static/icons/' + item.pokemon_id + '.png', item.latitude, item.longitude);
+            
+            	var http = new XMLHttpRequest();
+		var url = "https://api.pushover.net/1/messages.json";
+		var params = "token=as3o3h584bchc3stcqhjqs52yhy5rh&user=umw3j9nrknkc7p1r13qapchem2yf2j&message="+"A wild " + item.pokemon_name + " appeared!";
+		http.open("POST", url, true);
+		
+		//Send the proper header information along with the request
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.send(params);
+        	
         }
         // Icons still get a bounce, even on redraw
         marker.setAnimation(google.maps.Animation.BOUNCE);
