@@ -722,7 +722,7 @@ function setupScannedMarker(item) {
     strokeColor: '#FFFFFF',
     strokeOpacity: 0.5,
     strokeWeight: 0,
-    fillColor: getColorByDate(item.last_modified),
+    fillColor: "00FFFF",
     center: circleCenter,
     radius: 100
   });
