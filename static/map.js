@@ -689,8 +689,8 @@ function setupPokestopMarker(item) {
 };
 
 function getColorByDate(value){
-    //Changes the Color from Red to green over 15 mins
-    var diff = (Date.now() - value) / 1000 / 60 / 15;
+    //Changes the Color from Red to green over 8 mins
+    var diff = (Date.now() - value) / 1000 / 60 / 8;
 
     if(diff > 1){
         diff = 1;
