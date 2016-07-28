@@ -698,7 +698,7 @@ function getColorByDate(value){
 
     //value from 0 to 1 - Green to Red
     var hue=((1-diff)*120).toString(10);
-    return ["hsl(",hue,",50%,10%)"].join("");
+    return ["hsl(",hue,",100%,50%,10%)"].join("");
 }
 
 function setupScannedMarker(item) {
