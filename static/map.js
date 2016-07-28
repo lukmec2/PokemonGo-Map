@@ -704,13 +704,14 @@ function getColorByDate(value){
 function setupScannedMarker(item) {
     var circleCenter = new google.maps.LatLng(item.latitude, item.longitude);
 
+ var offsetlng = 0.0012;
  var flightPlanCoordinates = [
     {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.lng()},
-    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() -0.00105},
-    {lat: circleCenter.lat() - 0.00045, lng: circleCenter.lng() -0.00105},
+    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() -offsetlng},
+    {lat: circleCenter.lat() - 0.00045, lng: circleCenter.lng() -offsetlng},
     {lat: circleCenter.lat() - 0.0009, lng: circleCenter.lng()},
-    {lat: circleCenter.lat() - 0.00045, lng: circleCenter.lng() +0.00105},
-    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() +0.00105}
+    {lat: circleCenter.lat() - 0.00045, lng: circleCenter.lng() +offsetlng},
+    {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() +offsetlng}
   ];
  
   var marker = new google.maps.Polygon({
