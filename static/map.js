@@ -703,7 +703,7 @@ function getColorByDate(value){
 
 function setupScannedMarker(item) {
     var circleCenter = new google.maps.LatLng(item.latitude, item.longitude);
-/*
+
  var flightPlanCoordinates = [
     {lat: circleCenter.lat() + 0.0009, lng:  circleCenter.lng()},
     {lat: circleCenter.lat() + 0.00045, lng: circleCenter.lng() -0.00105},
@@ -720,11 +720,11 @@ function setupScannedMarker(item) {
     strokeOpacity: 0.5,
     strokeWeight: 1,
     fillColor: '#FFFFFF',
-    center: point,
+    center: circleCenter,
     radius: 100
   });
- */
-
+ 
+/*
     var marker = new google.maps.Circle({
         map: map,
         center: circleCenter,
@@ -734,7 +734,7 @@ function setupScannedMarker(item) {
         strokeWeight: 0,
         strokeOpacity: 0.1
     });
-  
+  */
  
     // marker.infoWindow = new google.maps.InfoWindow({
     //     content: scannedLabel(item.last_modified),
